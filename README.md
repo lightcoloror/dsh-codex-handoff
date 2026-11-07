@@ -16,6 +16,8 @@ dsh plugin --profile desktop add github:lightcoloror/dsh-codex-handoff#v0.1.0
 
 包包含可直接运行的源码，没有安装脚本或构建步骤。`desktop` 可以换成你实际使用的 profile。安装到未使用的 profile 不会让当前应用加载插件。
 
+也可在 Harness 的 **Custom plugin indexes / 自定义插件索引** 中添加 [本插件索引源](https://raw.githubusercontent.com/lightcoloror/dsh-codex-handoff/main/market-index.json)，再从 Discover 安装。此索引由本项目维护，不代表第三方市场收录。
+
 ## 首次配置
 
 1. 在 Harness 中登记 DeepSeek 的专属 workspace。

@@ -1,0 +1,39 @@
+{
+  "format": 1,
+  "title": {
+    "en": "DSH Codex Handoff",
+    "zh": "Codex / DeepSeek 交接插件"
+  },
+  "plugins": [
+    {
+      "name": "dsh-codex-handoff",
+      "title": {
+        "en": "Codex Handoff",
+        "zh": "Codex 双向工单交接"
+      },
+      "description": {
+        "en": "Workspace-scoped Codex and DeepSeek Harness handoffs with restart-safe Windows endpoint discovery.",
+        "zh": "专属工作区双向交接；随 Harness 启动，自动发现当前 Windows 端口。"
+      },
+      "author": "lightcoloror",
+      "homepage": "https://github.com/lightcoloror/dsh-codex-handoff#readme",
+      "repository": {
+        "url": "https://github.com/lightcoloror/dsh-codex-handoff"
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1794055111,
+          "engines": {
+            "dsh": ">=0.2.1-rc.5 <0.3.0-0"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/lightcoloror/dsh-codex-handoff",
+            "commit": "74a9a736e5bde35257cb1b5edc83338f482d3c15"
+          }
+        }
+      ]
+    }
+  ]
+}
