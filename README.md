@@ -6,7 +6,7 @@ DeepSeek Harness 插件：Codex 派单，DeepSeek 在明确登记的专属工作
 
 ## 安装
 
-需要 DeepSeek Harness `0.2.1-rc.5` 或兼容的 `0.2.x`、Node 22+、Python 3.11+。Windows 是当前自动发现验证平台；其他平台尚未实现同等连接身份检查。DeepSeek API 与峰谷门控由使用者自己的 Harness 管理，本插件不提供、不读取 API Key，不修改其全局模型或请求门控。
+需要 DeepSeek Harness `0.2.1-rc.5` 或兼容的 `0.2.x`、Node 22+、Python 3.11+。Windows 是当前自动发现验证平台；其他平台尚未实现同等连接身份检查。DeepSeek API 与峰谷门控由使用者自己的 Harness 管理，本插件不提供、不读取 API Key，也不改请求门控。便携版默认沿用模型；显式选模有下述上游限制。
 
 在 Plugins 的添加插件入口粘贴仓库链接，或使用 CLI：
 
@@ -51,6 +51,7 @@ python -X utf8 -B C:/AgentWork/bridge/cli.py run-foreground JOB_ID --authorizati
 - 默认 `enableInboxWakeups:false`。收件箱持久化和当前聊天内程序等待可用；可选旧原生队列通知不代表未加载聊天、应用退出或整机重启后能自动唤醒。不得为单工单追踪擅建自动化。
 - 本地身份检查信任宿主状态目录和指定 Harness 程序，不能抵抗同一账号下已能修改这些文件的恶意程序。桥接令牌不是 DeepSeek API Key。
 - 更新若改变模块路径或客户端源码，需要审阅后重新配对，保留旧状态。不要删除旧工单或换 ID 绕过冲突。
+- 默认 `routing:"inherit"`。已在部分 Harness 版本观察到 `SessionController.selectModel` 在选会话模型后写回全局默认；因此显式 provider/model/reasoningEffort 不能承诺只改本工单。要求保留全局默认时沿用当前模型，先核对版本行为，不自动改配置恢复默认。v0.1.0 的这一已知限制也列在 Release 说明中。
 
 ## 验证范围
 

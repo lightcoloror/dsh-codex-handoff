@@ -11,6 +11,8 @@ Use the actual CODEX_THREAD_ID. Prepare a small explicit brief with inputs, goal
 
 Choose tools for the task. Source review may use file tools. Terminal analysis/tests require `requires_shell:true`, specific operations, cwd and file scope. Keep caches in task .tmp. Terminal permission, source edits and device operations are separate authorizations.
 
+Default to routing:inherit. Some Harness versions persist global defaults when selecting a session model or effort. Verify that native behavior before explicit selection; do not promise session-only model changes or rewrite global settings to compensate.
+
 Reuse one job/session's stages for related serial work. Use prepare, then run-foreground with a local record of the actual assignment. Program waiting merges progress; check inbox at work checkpoints. Validate job, source, session, workspace and nonce before ack. Review actual artifacts, tool exit codes and producer completion; then stage-review/stage-next or feedback, and finally close. An ACK is not acceptance. Preserve uncertain submissions and original request IDs; never blindly replay.
 
 Record observed usage and rework; missing cost is unknown. Start no model controllers and create no single-job automations. Durable inbox, queue notices and cold-chat wakeup are different capabilities; claim only what current evidence proves.
