@@ -1,0 +1,7 @@
+- insert:
+    - id: codex-deepseek-handoff
+      name: dsh-codex-handoff
+      config:
+        workspacePaths: []
+        allowWorkspaceCreate: false
+        enableInboxWakeups: false

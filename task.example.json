@@ -1,0 +1,11 @@
+{
+  "title": "Review supplied source",
+  "routing": "inherit",
+  "requires_shell": false,
+  "evaluation_scope": "synthetic",
+  "goal": "Use file tools to review only the supplied task inputs; write outputs/review.md. No source edits or device operations.",
+  "acceptance": [
+    "Each finding cites an input location; unsupported claims are unknown."
+  ],
+  "inputs": []
+}

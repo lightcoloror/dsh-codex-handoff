@@ -1,0 +1,59 @@
+{
+  "name": "dsh-codex-handoff",
+  "version": "0.1.0",
+  "description": "Workspace-scoped Codex and DeepSeek Harness handoffs with restart-safe Windows endpoint discovery.",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "lightcoloror",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lightcoloror/dsh-codex-handoff.git"
+  },
+  "homepage": "https://github.com/lightcoloror/dsh-codex-handoff#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "bin": {
+    "dsh-codex-handoff-setup": "./setup.mjs"
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.1-rc.5 <0.3.0-0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.5"
+  },
+  "devDependencies": {
+    "@deepseek-ai/schemastery": "^3.18.5"
+  },
+  "files": [
+    "index.js",
+    "plugin.mjs",
+    "plugin.test.mjs",
+    "cordis.patch.yml",
+    "*.py",
+    "setup.mjs",
+    "vendor",
+    "vendor-manifest.json",
+    "routing-policy.json",
+    "followup-schedule.json",
+    "AGENT_DISCOVERY.md",
+    "task.example.json",
+    "skills",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "SOURCE-MANIFEST.json"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "codex",
+    "handoff",
+    "workspace",
+    "windows"
+  ]
+}

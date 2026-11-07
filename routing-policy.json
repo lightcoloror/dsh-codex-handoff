@@ -1,0 +1,8 @@
+{
+  "schema": "deepseek-routing.v1",
+  "version": "portable-0.1.0",
+  "default_routing": "inherit",
+  "workspace_capabilities": {},
+  "routes": {},
+  "evidence": "No machine-specific model identity, price or terminal capability is assumed."
+}

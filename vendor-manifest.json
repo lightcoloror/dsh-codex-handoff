@@ -1,0 +1,25 @@
+{
+  "collab": {
+    "source": "https://github.com/ESROAMER/codex-dsh-collab",
+    "commit": "abdc2368bdbc0b74cb58cd83e27254da8dc4784a",
+    "files": {
+      "index.js": "18f5ce8e5d1f0e5d15f16e16923d2c460954af2a27abda3f875fbe57d42c8c39",
+      "package.json": "c559f07592fa8ec391dc77b690b72d335d7351abe958a0d59d9dd98322051238",
+      "LICENSE": "bc18b4d4c000db5472978cceaabc6b7ae90d537561a6e976c57fc563b7bafe79",
+      "PROTOCOL.md": "004cdf4a9873ae26272c21747457fe6eb0a9519aa108516fa741b9c5f1459ef1",
+      "skills/deepseek-harness/scripts/bridge.py": "2d03c1dfae9bd6c2c175f6676062b5a4dc2129ec92a71187edad72281383dce0"
+    }
+  },
+  "dax": {
+    "source": "https://github.com/Dax233/dsh-codex-bridge",
+    "commit": "4a0743ccdd95b55247a032c9718dc73167cf24c1",
+    "files": {
+      "lib/runner.mjs": "38bfa3113ded904b0f245e8bbe7a00161438e65c4bedf612a7738b52238f8edf",
+      "lib/rollout.mjs": "3fe7bedb01c45a1f1f99c507350f14bd143423e34d271e3e4d56bfc77719baea",
+      "lib/util.mjs": "81c27a576636fd95599d90bcbe8e050ed4915e3480e0c06e8054a0936ac11c96",
+      "lib/codex-home.mjs": "8cde514dbecae82d3c896ee0e367280f81d66c60b4f8c7fe30e9f56eaab65306",
+      "LICENSE": "8ba634c3fabded5311806543b77d56af607bc474472cc4fd4765526d5594a197",
+      "package.json": "bb232dbfd4f70c785b482661f5a639f6e688b4a06d4d6486976d4f8369b16932"
+    }
+  }
+}

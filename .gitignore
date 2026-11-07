@@ -1,0 +1,6 @@
+.state/
+.client/
+.tmp/
+__pycache__/
+node_modules/
+*.tgz
