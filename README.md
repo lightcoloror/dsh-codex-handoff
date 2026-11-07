@@ -74,3 +74,7 @@ npm pack --ignore-scripts
 ## English
 
 A workspace-scoped Codex ↔ DeepSeek Harness handoff plugin. It loads with Harness, publishes its current loopback endpoint, and authenticates the connected peer using Windows TCP ownership before sending a scoped credential. Configure explicit workspaces, pair once, and use the printed Python CLI. No API keys, automatic approvals, GUI automation, background model controllers, or automatic task replay are included. See the commands above. A GitHub installation link and a custom format-1 index are supported; listing in a third-party public market is separate.
+
+## 同类项目与代码来源
+
+参阅[同类插件对比与固定代码来源](https://github.com/lightcoloror/dsh-codex-handoff/blob/main/COMPARISON.zh.md)。本项目直接复用 ESROAMER 与 Dax233 的固定 MIT 源码；工作区受限凭据和双向协作均不是本项目首创。
