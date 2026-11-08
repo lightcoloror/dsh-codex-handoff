@@ -7,9 +7,11 @@ INSTRUCTION = '最新阶梯兜底（2026-11-03，覆盖历史每两分钟固定�
 # Encode the Beijing policy in UTC. The installed app's timezone-specific
 # DTSTART path was observed adding eight hours to the intended first run.
 # UTC 16-23 is the following Beijing morning on every day, including Sun/Mon.
-BASE_RULE = ('RRULE:FREQ=MINUTELY;INTERVAL=120;BYHOUR=16,17,18,19,20,21,22,23;BYSECOND=0\n'
-             'RRULE:FREQ=MINUTELY;INTERVAL=120;BYDAY=MO,TU,WE,TH,FR;BYHOUR=0,4,5,10,11,12,13,14,15;BYSECOND=0\n'
-             'RRULE:FREQ=MINUTELY;INTERVAL=120;BYDAY=SA,SU;BYHOUR=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15;BYSECOND=0')
+# Use hourly stepping, not MINUTELY/120: the installed recurrence library's
+# filtered-day fast-forward can enter an unreachable hour cycle with BYHOUR.
+BASE_RULE = ('RRULE:FREQ=HOURLY;INTERVAL=2;BYHOUR=16,17,18,19,20,21,22,23;BYMINUTE=0;BYSECOND=0\n'
+             'RRULE:FREQ=HOURLY;INTERVAL=2;BYDAY=MO,TU,WE,TH,FR;BYHOUR=0,4,5,10,11,12,13,14,15;BYMINUTE=0;BYSECOND=0\n'
+             'RRULE:FREQ=HOURLY;INTERVAL=2;BYDAY=SA,SU;BYHOUR=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15;BYMINUTE=0;BYSECOND=0')
 
 def local(at):
     if at.tzinfo is None: raise ValueError('Aware timestamp required')
@@ -31,7 +33,15 @@ def recurrence(due):
     # source fails before rescheduling. A missed checkpoint never leaves a
     # perpetual two-minute timer behind.
     return ('DTSTART:'+due.astimezone(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'\n'
-            +BASE_RULE.replace('BYSECOND=0','BYSECOND='+str(due.second)))
+            +BASE_RULE.replace('BYMINUTE=0','BYMINUTE='+str(due.minute))
+                      .replace('BYSECOND=0','BYSECOND='+str(due.second)))
+
+def _refresh_recurrence(previous):
+    # Refresh cached legacy encodings without consuming a step, moving the due
+    # time, mutating the input, or changing the source/job/authorization binding.
+    current=dict(previous)
+    current['rrule']=recurrence(datetime.fromisoformat(current['due_at']))
+    return current
 
 def plan(previous, *, source, jobs, activity, at, reset=False):
     at=local(at)
@@ -45,9 +55,9 @@ def plan(previous, *, source, jobs, activity, at, reset=False):
             deferred=dict(previous);due=next_allowed(at).replace(microsecond=0)
             deferred.update(due_at=due.isoformat(),rrule=recurrence(due),reason='peak_deferred')
             return deferred
-        return dict(previous)
+        return _refresh_recurrence(previous)
     elif at<datetime.fromisoformat(previous['due_at']):
-        return dict(previous)
+        return _refresh_recurrence(previous)
     else:
         stage=min(int(previous['stage'])+1,len(DELAYS)-1)
         checks=int(previous.get('empty_checks',0))+1;reason='no_new_result'

@@ -1,6 +1,6 @@
 {
   "name": "dsh-codex-handoff",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Workspace-scoped Codex and DeepSeek Harness handoffs with restart-safe Windows endpoint discovery.",
   "type": "module",
   "main": "index.js",
@@ -44,6 +44,7 @@
     "task.example.json",
     "skills",
     "README.md",
+    "FOLLOWUP-RRULE-SAFETY.md",
     "LICENSE",
     "NOTICE",
     "SOURCE-MANIFEST.json"

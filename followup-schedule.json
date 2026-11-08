@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-03.3",
+  "version": "2026-11-08.1",
   "timezone": "Asia/Shanghai",
   "interval_minutes": 120,
   "backoff_minutes": [
@@ -20,9 +20,9 @@
     ]
   ],
   "weekend_all_offpeak": true,
-  "rrule": "RRULE:FREQ=MINUTELY;INTERVAL=120;BYHOUR=16,17,18,19,20,21,22,23;BYSECOND=0\nRRULE:FREQ=MINUTELY;INTERVAL=120;BYDAY=MO,TU,WE,TH,FR;BYHOUR=0,4,5,10,11,12,13,14,15;BYSECOND=0\nRRULE:FREQ=MINUTELY;INTERVAL=120;BYDAY=SA,SU;BYHOUR=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15;BYSECOND=0",
+  "rrule": "RRULE:FREQ=HOURLY;INTERVAL=2;BYHOUR=16,17,18,19,20,21,22,23;BYMINUTE=0;BYSECOND=0\nRRULE:FREQ=HOURLY;INTERVAL=2;BYDAY=MO,TU,WE,TH,FR;BYHOUR=0,4,5,10,11,12,13,14,15;BYMINUTE=0;BYSECOND=0\nRRULE:FREQ=HOURLY;INTERVAL=2;BYDAY=SA,SU;BYHOUR=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15;BYMINUTE=0;BYSECOND=0",
   "planning": "Use cli.py followup-next after prepare and at each source checkpoint. Its exact per-source update_request contains a first due time and a two-hour native safety net; this static recurrence is only the default safety net, never the two-minute polling cadence.",
   "authority": "Example Beijing observation calendar only; opt-in. Does not configure Harness prices or request gates.",
   "native_scheduler_timezone_requirement": "Beijing policy converted to UTC recurrence fields to avoid observed TZID eight-hour shift; actual native next_run_nominal_at must equal first due epoch",
-  "rrule_encoding": "UTC hour/day windows; per-source DTSTART uses explicit UTC Z; user-facing policy remains Asia/Shanghai"
+  "rrule_encoding": "UTC hour/day windows; HOURLY interval 2; explicit per-source UTC DTSTART with matching BYMINUTE/BYSECOND avoids filtered-day MINUTELY loops; Beijing policy unchanged"
 }

@@ -11,7 +11,7 @@ DeepSeek Harness 插件：Codex 派单，DeepSeek 在明确登记的专属工作
 在 Plugins 的添加插件入口粘贴仓库链接，或使用 CLI：
 
 ```powershell
-dsh plugin --profile desktop add github:lightcoloror/dsh-codex-handoff#v0.1.0
+dsh plugin --profile desktop add github:lightcoloror/dsh-codex-handoff#v0.1.1
 ```
 
 包包含可直接运行的源码，没有安装脚本或构建步骤。`desktop` 可以换成你实际使用的 profile。安装到未使用的 profile 不会让当前应用加载插件。
@@ -78,3 +78,12 @@ A workspace-scoped Codex ↔ DeepSeek Harness handoff plugin. It loads with Harn
 ## 同类项目与代码来源
 
 参阅[同类插件对比与固定代码来源](https://github.com/lightcoloror/dsh-codex-handoff/blob/main/COMPARISON.zh.md)。本项目直接复用 ESROAMER 与 Dax233 的固定 MIT 源码；工作区受限凭据和双向协作均不是本项目首创。
+
+## Native followup safety fix (0.1.1)
+
+The optional legacy two-hour followup now uses hourly recurrence stepping,
+avoiding a filtered-day loop in the affected desktop recurrence library. Cached
+plans are re-encoded without changing due time or backoff. See
+[FOLLOWUP-RRULE-SAFETY.md](FOLLOWUP-RRULE-SAFETY.md) for the trigger, tests and
+limits. Foreground supervision needs no automation. Existing paired clients are
+not upgraded by a repository push; use an explicitly reviewed client update.
