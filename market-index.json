@@ -22,6 +22,18 @@
       },
       "versions": [
         {
+          "version": "0.1.1",
+          "publishTimestamp": 1794100049,
+          "engines": {
+            "dsh": ">=0.2.1-rc.5 <0.3.0-0"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/lightcoloror/dsh-codex-handoff",
+            "commit": "1300b13c14dee2e94c1964bfec27b5f99f7da1c6"
+          }
+        },
+        {
           "version": "0.1.0",
           "publishTimestamp": 1794055111,
           "engines": {
