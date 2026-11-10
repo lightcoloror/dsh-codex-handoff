@@ -11,7 +11,7 @@ DeepSeek Harness 插件：Codex 派单，DeepSeek 在明确登记的专属工作
 在 Plugins 的添加插件入口粘贴仓库链接，或使用 CLI：
 
 ```powershell
-dsh plugin --profile desktop add github:lightcoloror/dsh-codex-handoff#main
+dsh plugin --profile desktop add github:lightcoloror/dsh-codex-handoff#d6c99446717c9b272c21aa88cb0050a92b117ee9
 ```
 
 包包含可直接运行的源码，没有安装脚本或构建步骤。`desktop` 可以换成你实际使用的 profile。安装到未使用的 profile 不会让当前应用加载插件。
