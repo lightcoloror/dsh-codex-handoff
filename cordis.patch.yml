@@ -1,6 +1,6 @@
 - insert:
     - id: codex-deepseek-handoff
-      name: dsh-codex-handoff
+      name: '@lightcoloror/dsh-codex-handoff'
       config:
         workspacePaths: []
         allowWorkspaceCreate: false

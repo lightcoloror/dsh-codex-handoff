@@ -11,10 +11,12 @@ DeepSeek Harness 插件：Codex 派单，DeepSeek 在明确登记的专属工作
 在 Plugins 的添加插件入口粘贴仓库链接，或使用 CLI：
 
 ```powershell
-dsh plugin --profile desktop add github:lightcoloror/dsh-codex-handoff#v0.1.1
+dsh plugin --profile desktop add github:lightcoloror/dsh-codex-handoff#main
 ```
 
 包包含可直接运行的源码，没有安装脚本或构建步骤。`desktop` 可以换成你实际使用的 profile。安装到未使用的 profile 不会让当前应用加载插件。
+
+当前源码包名为 `@lightcoloror/dsh-codex-handoff`。以上是 GitHub 安装方式，不表示已发布到 npm；旧的 `v0.1.1` 标签仍使用原包名。
 
 也可在 Harness 的 **Custom plugin indexes / 自定义插件索引** 中添加 [本插件索引源](https://raw.githubusercontent.com/lightcoloror/dsh-codex-handoff/main/market-index.json)，再从 Discover 安装。此索引由本项目维护，不代表第三方市场收录。
 
